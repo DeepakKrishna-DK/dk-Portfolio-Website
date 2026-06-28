@@ -1,0 +1,38 @@
+---
+title: "RUDRAS"
+excerpt: "A firewall that learns like an immune system. RUDRAS replaces brittle rule-stacks with adaptive, MITRE-aligned detection — classifying, isolating, and remembering hostile flows in real time for Zero-Trust egress."
+date: "May 2026"
+readTime: "5 min read"
+category: "research"
+categoryLabel: "Case Study"
+categoryColor: "#00FF66"
+featured: true
+tags: ["Networks", "AI-Native", "Firewalls", "Zero-Trust", "Cybersecurity", "Research"]
+statusMessage: "This paper is currently pending publication. The full article will be available here soon."
+contributors:
+  - name: "Deepak P S"
+    role: "Author"
+    link: "mailto:deepakkrishnark@gmail.com"
+---
+
+## Problem
+Traditional rule-based firewalls struggle with unknown threats — polymorphic malware, encrypted C2, and zero-day exploitation chains that defeat signature controls. RUDRAS assumes a compromised perimeter and treats every packet as untrusted until behaviorally vouched for.
+
+## Architecture
+Rust + Python pipeline performing deep packet inspection, IDS/IPS integration, live packet capture, anomaly detection, CVE feed integration, and Linux kernel hardening. 34+ parallel safeguards run as composable checks under a behavioral scoring engine.
+
+## Security Relevance
+Built for Zero-Trust networks with adaptive detection mapped to MITRE ATT&CK tactics and techniques. Designed for SOC handoff — every block ships with attack-chain context, severity, and a recommended response.
+
+## Proof
+Best Research Paper at ICNEXT'26 (peer-reviewed and indexed). Reference implementation on GitHub; Windows port and federated memory sharing on the roadmap.
+
+## Mission Timeline
+1. **Q3 2025: Hypothesis** — Modeled adaptive defense after the human immune system.
+2. **Q4 2025: Prototype** — Sandboxed packet inspector + behavior scoring engine.
+3. **Q1 2026: Red-Team Trials** — 12 synthetic attack scenarios across enterprise topologies.
+4. **May 2026: Publication** — Best Paper, ICNEXT'26 (peer reviewed and indexed).
+
+## Take it with you
+[Source Code (GitHub)](https://github.com/DeepakKrishna-DK/Rudras-Cognitive_Immunological_Defense_Firewall)
+

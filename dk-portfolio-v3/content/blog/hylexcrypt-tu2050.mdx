@@ -1,0 +1,38 @@
+---
+title: "HYLEXCRYPT TU2050"
+excerpt: "A Unified Hybrid Steganography–Cryptography Framework. Unifying Argon2id, AES-256-GCM, ChaCha20-Poly1305, adaptive LSB steganography, and Reed-Solomon FEC for resilient covert communication."
+date: "Jun 2026"
+readTime: "5 min read"
+category: "research"
+categoryLabel: "Case Study"
+categoryColor: "#1072e9ff"
+tags: ["steganography", "cryptography", "Python", "information hiding", "Encryption/Decryption", "Research"]
+externalLink: "https://doi.org/10.5281/zenodo.20622278"
+statusMessage: "This paper is published research artifact available on Zenodo. You can read the full publication at the external link below."
+contributors:
+  - name: "Nithin S"
+    role: "Author"
+    link: "https://www.linkedin.com/in/nithin-s-67a8802a5/"
+---
+
+## Problem
+Modern digital communication demands information-hiding mechanisms that combine both stealth and cryptographic strength. Existing steganography tools either lack robust encryption, rely on outdated key derivation functions, or offer no operational safeguards such as timed self-destruction or carrier integrity verification.
+
+## Architecture
+An end-to-end Python 3.9+ pipeline integrating Argon2id key derivation, ChaCha20-Poly1305 / AES-256-GCM authenticated encryption, Reed-Solomon forward error correction, and adaptive LSB embedding for PNG/WAV carriers. 
+
+## Security Relevance
+Binds the encrypted ciphertext to specific hardware fingerprints, implements logical payload expiry with automated wipe scheduling, and uses an evolutionary position selector to defeat first-order steganalysis.
+
+## Proof
+Published open-source framework with comprehensive self-test suite. Recognized as a practical, research-extensible foundation for next-generation information-hiding systems with an assigned DOI on Zenodo.
+
+## Mission Timeline
+1. **Q1 2026: Concept & Cryptography** — Integrated Argon2id and AEAD encryption.
+2. **Q2 2026: Steganography** — Implemented adaptive LSB embedding for PNG and WAV.
+3. **May 2026: Hardening** — Added Reed-Solomon FEC and hardware fingerprint binding.
+4. **Jun 2026: Publication** — Open-source release with DOI on Zenodo.
+
+## Take it with you
+[DOI Publication](https://doi.org/10.5281/zenodo.20622278)
+[PyPI Package](https://pypi.org/project/hylexcrypt/)
