@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     title: META_DATA.twitter.title,
     description: META_DATA.twitter.description,
   },
+  icons: {
+    icon: '/port-logo.png',
+    shortcut: '/port-logo.png',
+    apple: '/port-logo.png',
+  },
 };
 
 import BackgroundEffects from "@/components/ui/BackgroundEffects";
