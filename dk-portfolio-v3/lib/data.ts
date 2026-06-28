@@ -353,7 +353,7 @@ export const EXPERIENCE = [
       "Ran code reviews for security vulnerabilities and applied threat modelling, maintaining zero critical vulnerabilities in submitted deliverables.",
       "Mentored 15+ junior developers on secure coding and Security QA while coordinating a 50+ member technical team."
     ],
-    tools: ["SDLC", "Threat Modelling", "Code Review", "React", "TypeScript"],
+    tools: ["Technical Leadership", "Event Planning", "Event Management", "Social Media Strategy", "Computer Information Systems", "Technical Support", "Industrial Research", "Team Management"],
   },
   {
     role: "Tech Lead — i-Sphere'26 Hackathon",
@@ -364,7 +364,7 @@ export const EXPERIENCE = [
       "Directed an 8-event, 250+ participant national hackathon end-to-end — operations, judging, and live infrastructure.",
       "Hardened the registration and submission stack against abuse, sustaining 99.9% availability through peak load."
     ],
-    tools: ["Infrastructure Security", "Load Testing", "Operations"],
+    tools: ["Technical Leadership", "Event Planning", "Event Management", "Social Media Strategy", "Computer Information Systems", "Technical Support", "Industrial Research", "Team Management"],
   },
   {
     role: "Microsoft Elevate × AICTE Intern",
@@ -375,7 +375,7 @@ export const EXPERIENCE = [
       "Completed a 6-module program covering Microsoft Azure, cloud administration, AI/ML, and Microsoft Copilot.",
       "Designed scalable Azure infrastructure architectures and built intelligent automation workflows using Azure AI and Power BI."
     ],
-    tools: ["Azure", "AI/ML", "Power BI", "Cloud Admin"],
+    tools: ["Azure", "AI/ML", "Power BI", "Cloud Administration & Engineering", "Microsoft Copilot"],
   },
   {
     role: "Cybersecurity Intern",
@@ -387,7 +387,7 @@ export const EXPERIENCE = [
       "Performed SIEM log analysis in Splunk — triaged alerts, correlated endpoint events, escalated confirmed incidents, and documented incident timelines.",
       "Applied firewall configuration, threat modelling, and IDS/IPS tuning across simulated enterprise networks; delivered structured assessment reports that standardized remediation workflows."
     ],
-    tools: ["Nmap", "Burp Suite", "Metasploit", "Splunk", "OWASP"],
+    tools: ["Cybersecurity Fundamentals", "Nmap", "Burp Suite", "Metasploit", "Splunk", "OWASP"],
   },
 ];
 
