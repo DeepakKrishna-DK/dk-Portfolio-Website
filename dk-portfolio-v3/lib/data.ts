@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   email: "deepakkrishnark@gmail.com",
   github: "https://github.com/DeepakKrishna-DK",
   linkedin: "https://www.linkedin.com/in/deepak-p-s",
-  resumeUrl: "https://docs.google.com/document/d/1rfcK5PMqa2HmOyVjuRcGi03ftqLZPDBm/edit?usp=sharing&ouid=106473622860469751246&rtpof=true&sd=true",
+  resumeUrl: "https://docs.google.com/document/d/110nVeNFk9ZAsmrJ8xw_JL44brcuPSTvJ/edit?usp=sharing&ouid=106473622860469751246&rtpof=true&sd=true",
 };
 
 export const META_DATA = {
@@ -103,6 +103,38 @@ export const PROOF_BADGES = [
 ];
 
 export const PROJECTS = [
+  {
+    slug: "ztag",
+    name: "ZTAG",
+    sub: "Rust · Next.js · Keycloak",
+    tag: "ZERO TRUST",
+    desc: "ZTAG (Zero-Trust Access Gateway) protects internal apps using a 'never trust, always verify' model. A Gateway intercepts traffic, enforces Keycloak SSO, and evaluates risk dynamically.",
+    color: "#FF3366",
+    statusLabel: "Completed",
+    statusColor: "#00FF7F",
+    link: "https://github.com/DeepakKrishna-DK/Ztag--Zero_Trust_Access_Gateway",
+    stack: ["Zero Trust", "Rust", "Next.js", "Keycloak", "Security"],
+    metrics: [
+      { label: "Architecture", value: "Zero-Trust" },
+      { label: "Visibility", value: "Real-time" },
+      { label: "Access Model", value: "Dynamic" },
+      { label: "SSO", value: "Keycloak" },
+    ],
+    hero: {
+      headline: "Never trust, always verify.",
+      lede: "ZTAG intercepts traffic, enforces Keycloak SSO, and evaluates risk dynamically, providing real-time visibility into device compliance and active sessions.",
+    },
+    narrative: [
+      { heading: "Overview", body: "ZTAG (Zero-Trust Access Gateway) protects internal apps using a 'never trust, always verify' model. A Gateway intercepts traffic, enforces Keycloak SSO, and evaluates risk dynamically. The real-time Next.js dashboard gives security teams live visibility into device compliance, active sessions, and a full audit trail." },
+    ],
+    timeline: [
+      { date: "Jun 2026", title: "Architecture", desc: "Designed the Zero-Trust access gateway and integrated Keycloak." },
+      { date: "Jul 2026", title: "Dashboard", desc: "Built the real-time Next.js dashboard for full audit trail visibility." },
+    ],
+    artifacts: [
+      { label: "Source (GitHub)", href: "https://github.com/DeepakKrishna-DK/Ztag--Zero_Trust_Access_Gateway", kind: "code" },
+    ],
+  },
   {
     slug: "rudras",
     name: "RUDRAS",
