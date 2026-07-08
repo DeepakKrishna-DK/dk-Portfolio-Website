@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   email: "deepakkrishnark@gmail.com",
   github: "https://github.com/DeepakKrishna-DK",
   linkedin: "https://www.linkedin.com/in/deepak-p-s",
-  resumeUrl: "https://docs.google.com/document/d/110nVeNFk9ZAsmrJ8xw_JL44brcuPSTvJ/edit?usp=sharing&ouid=106473622860469751246&rtpof=true&sd=true",
+  resumeUrl: "https://drive.google.com/file/d/1mFXCNcINc9AVwXZYjEl5NRG4jx5npiwO/view?usp=sharing",
 };
 
 export const META_DATA = {
@@ -103,6 +103,37 @@ export const PROOF_BADGES = [
 ];
 
 export const PROJECTS = [
+  {
+    slug: "pulse",
+    name: "PULSE",
+    sub: "Neo4j · Bayesian Stats · SOAR",
+    tag: "AUTONOMOUS RESPONSE",
+    desc: "PULSE is a production-ready SOAR platform using Neo4j graph databases and Bayesian statistics for autonomous threat detection and containment. It correlates malicious processes, network connections, and file modifications into a live, physics-simulated graph, mathematically predicting and intercepting APTs in real-time.",
+    color: "#38BDF8",
+    statusLabel: "Completed",
+    statusColor: "#00FF7F",
+    link: "https://github.com/DeepakKrishna-DK/PULSE-Autonomous_Cyber_Response_Platform",
+    stack: ["Neo4j", "Bayesian Statistics", "SOAR", "Threat Detection"],
+    metrics: [
+      { label: "Architecture", value: "Graph-based" },
+      { label: "Detection", value: "Autonomous" },
+      { label: "Database", value: "Neo4j" },
+      { label: "Analysis", value: "Bayesian" },
+    ],
+    hero: {
+      headline: "Autonomous threat detection and containment.",
+      lede: "PULSE correlates malicious processes, network connections, and file modifications into a live, physics-simulated graph, mathematically predicting and intercepting APTs in real-time.",
+    },
+    narrative: [
+      { heading: "Overview", body: "PULSE is a production-ready SOAR platform using Neo4j graph databases and Bayesian statistics for autonomous threat detection and containment. It correlates malicious processes, network connections, and file modifications into a live, physics-simulated graph, mathematically predicting and intercepting APTs in real-time." },
+    ],
+    timeline: [
+      { date: "2026", title: "Development", desc: "Built the autonomous threat detection platform." },
+    ],
+    artifacts: [
+      { label: "Source (GitHub)", href: "https://github.com/DeepakKrishna-DK/PULSE-Autonomous_Cyber_Response_Platform", kind: "code" },
+    ],
+  },
   {
     slug: "ztag",
     name: "ZTAG",
