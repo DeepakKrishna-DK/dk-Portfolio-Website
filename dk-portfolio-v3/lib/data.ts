@@ -171,12 +171,12 @@ export const PROJECTS = [
     name: "RUDRAS",
     sub: "Rust · Python · DPI",
     tag: "COGNITIVE DEFENSE",
-    desc: "The core architecture is currently in development and undergoing rigorous validation. Coming Soon to Windows. We are pushing the boundaries of what a firewall can become. Stay tuned for further updates as the evolution continues.",
+    desc: "Rudras — Cognitive Immunological Defense Firewall (v4.1, Beta) A self-healing, next-gen firewall built entirely in Rust that defends networks the way an immune system defends a body — detecting, remembering, and evolving against threats in real time. Rudras combines a genetic-algorithm-driven detection engine, 45+ integrated security modules (WAF, C2 defense, ransomware sandboxing, deception network), and live IOC threat intelligence, all exposed through a real-time Next.js SOC dashboard. Currently in beta for Windows 10/11.",
     color: "#FF6B35",
     statusLabel: "In Dev",
     statusColor: "#FF6B35",
     link: "https://github.com/DeepakKrishna-DK/Rudras-Cognitive_Immunological_Defense_Firewall",
-    stack: ["Rust", "Python", "DPI", "IDS/IPS", "MITRE ATT&CK", "eBPF", "Linux Hardening"],
+    stack: ["Rust", "Windows Filtering Platform", "Machine Learning", "Next.js", "Threat Intelligence"],
     metrics: [
       { label: "Parallel Safeguards", value: "34+" },
       { label: "MITRE ATT&CK Tactics", value: "11" },
@@ -358,8 +358,15 @@ export const PAPERS = [
     color: "#D4AF37",
     links: [
       { label: "Read Paper", href: "/blog/rudras-firewall-architecture" },
-      { label: "GitHub", href: "https://github.com/DeepakKrishna-DK/Rudras-Cognitive_Immunological_Defense_Firewall" },
+      { label: "Source", href: "https://xlescience.org/index.php/NIJASET/article/view/2023" },
     ],
+    citations: {
+      mla: 'Deepak, P. S. "RUDRAS: A COGNITIVE IMMUNOLOGICAL DEFENSE FIREWALL FOR ZERO-TRUST, AI-NATIVE NETWORK PROTECTION." NCERC International Journal of Advanced Science, Engineering and Technology 6.1 (2026): 590-604.',
+      apa: 'Deepak, P. S. (2026). RUDRAS: A COGNITIVE IMMUNOLOGICAL DEFENSE FIREWALL FOR ZERO-TRUST, AI-NATIVE NETWORK PROTECTION. NCERC International Journal of Advanced Science, Engineering and Technology, 6(1), 590-604.',
+      chicago: 'Deepak, P. S. "RUDRAS: A COGNITIVE IMMUNOLOGICAL DEFENSE FIREWALL FOR ZERO-TRUST, AI-NATIVE NETWORK PROTECTION." NCERC International Journal of Advanced Science, Engineering and Technology 6, no. 1 (2026): 590-604.',
+      harvard: 'Deepak, P.S., 2026. RUDRAS: A COGNITIVE IMMUNOLOGICAL DEFENSE FIREWALL FOR ZERO-TRUST, AI-NATIVE NETWORK PROTECTION. NCERC International Journal of Advanced Science, Engineering and Technology, 6(1), pp.590-604.',
+      vancouver: 'Deepak PS. RUDRAS: A COGNITIVE IMMUNOLOGICAL DEFENSE FIREWALL FOR ZERO-TRUST, AI-NATIVE NETWORK PROTECTION. NCERC International Journal of Advanced Science, Engineering and Technology. 2026 Jun 30;6(1):590-604.',
+    },
   },
   {
     id: "002",
@@ -369,7 +376,17 @@ export const PAPERS = [
     note: "A thorough examination of current trends in AI-enabled drug discovery, focusing on critical activities such as target identification, hit identification, ADMET prediction, and lead optimization.",
     author: "Bhanu kiran R, Deepak P S, Nithin S, Dr. Vasudeva R",
     color: "#00C8FF",
-    links: [{ label: "Read Paper", href: "/blog/ai-in-drug-discovery" }],
+    links: [
+      { label: "Read Paper", href: "/blog/ai-in-drug-discovery" },
+      { label: "Source", href: "https://www.store.bookrivers.com/product/national-conference-on-recent-trends-in-engineering-science-and-technology-ncrtest-25/" }
+    ],
+    citations: {
+      mla: 'Bhanu kiran, R., et al. "A Comprehensive Review on Artificial Intelligence in Drug Discovery and Pharmaceutical Research." National Conference on Recent Trends in Engineering Science and Technology (NCRTEST-25). BookRivers, 2026.',
+      apa: 'Bhanu kiran, R., Deepak, P. S., Nithin, S., & Vasudeva, R. (2026). A Comprehensive Review on Artificial Intelligence in Drug Discovery and Pharmaceutical Research. In National Conference on Recent Trends in Engineering Science and Technology (NCRTEST-25). BookRivers.',
+      chicago: 'Bhanu kiran, R., Deepak P. S., Nithin S., and Vasudeva R. "A Comprehensive Review on Artificial Intelligence in Drug Discovery and Pharmaceutical Research." In National Conference on Recent Trends in Engineering Science and Technology (NCRTEST-25). BookRivers, 2026.',
+      harvard: 'Bhanu kiran, R., Deepak, P.S., Nithin, S. and Vasudeva, R., 2026. A Comprehensive Review on Artificial Intelligence in Drug Discovery and Pharmaceutical Research. In National Conference on Recent Trends in Engineering Science and Technology (NCRTEST-25). BookRivers.',
+      vancouver: 'Bhanu kiran R, Deepak PS, Nithin S, Vasudeva R. A Comprehensive Review on Artificial Intelligence in Drug Discovery and Pharmaceutical Research. In: National Conference on Recent Trends in Engineering Science and Technology (NCRTEST-25). BookRivers; 2026.',
+    },
   },
   {
     id: "003",
@@ -384,6 +401,13 @@ export const PAPERS = [
       { label: "DOI", href: "https://doi.org/10.5281/zenodo.20622278" },
       { label: "PyPI", href: "https://pypi.org/project/hylexcrypt/" },
     ],
+    citations: {
+      mla: 'Deepak, P. S., and Nithin S. "HylexCrypt TU2050: A Unified Hybrid Steganography–Cryptography Framework." Zenodo, 2026, doi:10.5281/zenodo.20622278.',
+      apa: 'Deepak, P. S., & Nithin, S. (2026). HylexCrypt TU2050: A Unified Hybrid Steganography–Cryptography Framework. Zenodo. https://doi.org/10.5281/zenodo.20622278',
+      chicago: 'Deepak, P. S., and Nithin S. "HylexCrypt TU2050: A Unified Hybrid Steganography–Cryptography Framework." Zenodo (2026). https://doi.org/10.5281/zenodo.20622278.',
+      harvard: 'Deepak, P.S. and Nithin, S., 2026. HylexCrypt TU2050: A Unified Hybrid Steganography–Cryptography Framework. Zenodo.',
+      vancouver: 'Deepak PS, Nithin S. HylexCrypt TU2050: A Unified Hybrid Steganography–Cryptography Framework. Zenodo; 2026. Available from: https://doi.org/10.5281/zenodo.20622278',
+    },
   },
 ];
 

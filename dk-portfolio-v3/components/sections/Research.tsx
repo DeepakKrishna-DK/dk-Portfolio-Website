@@ -1,14 +1,23 @@
 "use client";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { BookOpen, Quote, Layers, Presentation, Star, Award, GitBranch, ExternalLink, Link2, Lightbulb, Search, Code, ShieldCheck, FileText } from "lucide-react";
+import { BookOpen, Quote, Layers, Presentation, Star, Award, GitBranch, ExternalLink, Link2, Lightbulb, Search, Code, ShieldCheck, FileText, X, Copy, Check } from "lucide-react";
 import { PAPERS } from "@/lib/data";
 
 const VIEWPORT = { once: true, margin: "-100px" };
 const easeOutExpo = [0.16, 1, 0.3, 1] as any;
 
 export default function Research() {
+  const [activeCitation, setActiveCitation] = useState<any>(null);
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const handleCopy = (text: string, key: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2000);
+  };
+
   const roadmapRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: roadmapRef,
@@ -139,12 +148,21 @@ export default function Research() {
                   <Link href={p.links[0]?.href || "#"} className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#00F5FF] transition-colors group/link hover:drop-shadow-[0_0_8px_#00F5FF]">
                     <BookOpen className="w-3.5 h-3.5 group-hover/link:-translate-y-[1px] transition-transform" style={{ color }} /> {p.links[0]?.label || "Read Paper"}
                   </Link>
-                  <a href="#" className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#00F5FF] transition-colors group/link hover:drop-shadow-[0_0_8px_#00F5FF]">
-                    <Quote className="w-3.5 h-3.5 group-hover/link:-translate-y-[1px] transition-transform" style={{ color }} /> Citation
-                  </a>
-                  <a href={p.links[1]?.href || "#"} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#00F5FF] transition-colors ml-auto group/link hover:drop-shadow-[0_0_8px_#00F5FF]">
-                    <GitBranch className="w-3.5 h-3.5 group-hover/link:-translate-y-[1px] transition-transform" /> Source
-                  </a>
+                  {p.citations && (
+                    <button onClick={(e) => { e.preventDefault(); setActiveCitation(p); }} className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#00F5FF] transition-colors group/link hover:drop-shadow-[0_0_8px_#00F5FF]">
+                      <Quote className="w-3.5 h-3.5 group-hover/link:-translate-y-[1px] transition-transform" style={{ color }} /> Citation
+                    </button>
+                  )}
+                  {p.links[1] && (
+                    <a href={p.links[1].href} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#00F5FF] transition-colors ml-auto group/link hover:drop-shadow-[0_0_8px_#00F5FF]">
+                      {p.links[1].label === "Source" ? (
+                         <ExternalLink className="w-3.5 h-3.5 group-hover/link:-translate-y-[1px] transition-transform" />
+                      ) : (
+                         <GitBranch className="w-3.5 h-3.5 group-hover/link:-translate-y-[1px] transition-transform" />
+                      )}
+                      {p.links[1].label}
+                    </a>
+                  )}
                 </div>
 
               </motion.div>
@@ -207,6 +225,63 @@ export default function Research() {
             ))}
           </div>
         </motion.div>
+
+        {/* Citation Modal */}
+        <AnimatePresence>
+          {activeCitation && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+              onClick={() => setActiveCitation(null)}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                className="bg-[#020408] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-hidden flex flex-col shadow-2xl shadow-black"
+                onClick={e => e.stopPropagation()}
+              >
+                <div className="p-6 border-b border-white/10 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-white text-lg font-bold leading-tight mb-2">{activeCitation.title}</h3>
+                    <p className="text-white/50 text-sm">{activeCitation.author}</p>
+                  </div>
+                  <button onClick={() => setActiveCitation(null)} className="text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/10 rounded-full p-2">
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+                
+                <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
+                  {Object.entries(activeCitation.citations || {}).map(([key, value]: [string, any]) => (
+                    <div key={key} className="flex flex-col md:flex-row gap-2 md:gap-4 group">
+                      <div className="w-20 shrink-0 text-white/40 uppercase text-xs font-bold tracking-wider pt-1">{key}</div>
+                      <div className="flex-1 relative bg-white/[0.02] border border-white/5 rounded-lg p-4 group-hover:bg-white/[0.04] transition-colors">
+                        <p className="text-white/80 text-sm leading-relaxed pr-8 font-serif">{value}</p>
+                        <button 
+                          onClick={() => handleCopy(value, key)}
+                          className="absolute top-4 right-4 text-white/30 hover:text-[#00F5FF] transition-colors"
+                          title="Copy citation"
+                        >
+                          {copiedKey === key ? <Check className="w-4 h-4 text-[#00F5FF]" /> : <Copy className="w-4 h-4" />}
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="p-6 border-t border-white/10 bg-white/[0.02] flex justify-center gap-6">
+                  {["BibTeX", "EndNote", "RefMan", "RefWorks"].map(format => (
+                    <button key={format} className="text-sm font-medium text-[#2563EB] hover:text-[#3B82F6] transition-colors">
+                      {format}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </section>
